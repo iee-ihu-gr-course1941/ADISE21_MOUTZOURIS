@@ -105,12 +105,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <form action="phpfile">
 	<img class="mb-4" src="../assets/poker_chip.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Εισάγετε στοιχεία </h1>
-
-    <div class="form-floating">
-      <input type="text" id="floatingInput" placeholder="Όνομα χρήστη">
-    </div>
-    <div class="form-floating">
-      <input type="password" id="floatingPassword" placeholder="Κωδίκος">
+	
+	<?php 
+        if(!empty($login_err)){
+            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        }        
+        ?>
+	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    
+      
+	<div class="form-floating">
+	  <input type="text" id="floatingInput" placeholder="Όνομα χρήστη" <?php 
+	  echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+		<span class="invalid-feedback"><?php echo $username_err; ?></span>
+	</div>
+    
+	
+	<div class="form-floating">
+      <input type="password" id="floatingPassword" placeholder="Κωδίκος"<?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+	  <span class="invalid-feedback"><?php echo $password_err; ?></span>
     </div>
 
     <button type="submit">Σύνδεση</button>
