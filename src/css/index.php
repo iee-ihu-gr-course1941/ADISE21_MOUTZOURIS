@@ -102,7 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <body class="text-center">
     
 <main class="form-signin">
-  <form action="phpfile">
+  <form>
 	<img class="mb-4" src="../assets/poker_chip.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Εισάγετε στοιχεία </h1>
 	
