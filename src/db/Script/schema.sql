@@ -23,10 +23,10 @@ CREATE TABLE game_status (
 );
 
 CREATE TABLE users (
+  id tinyint(2) NOT NULL AUTO_INCREMENT,
   username varchar(20) DEFAULT NULL,
-  player enum('F','S') NOT NULL,
-  last_action timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (player)
+  password varchar(255) NOT NULL
+  PRIMARY KEY (id)
 );
 
 INSERT INTO cards VALUES (1,'C',NULL),(2,'C',NULL),(3,'C',NULL),(4,'C',NULL),(5,'C',NULL),(6,'C',NULL),(7,'C',NULL),(8,'C',NULL),(9,'C',NULL),(10,'C',NULL),(13,'C',NULL),(1,'D',NULL),(2,'D',NULL),(3,'D',NULL),(4,'D',NULL),(5,'D',NULL),(6,'D',NULL),(7,'D',NULL),(8,'D',NULL),(9,'D',NULL),(10,'D',NULL),(1,'H',NULL),(2,'H',NULL),(3,'H',NULL),(4,'H',NULL),(5,'H',NULL),(6,'H',NULL),(7,'H',NULL),(8,'H',NULL),(9,'H',NULL),(10,'H',NULL),(1,'S',NULL),(2,'S',NULL),(3,'S',NULL),(4,'S',NULL),(5,'S',NULL),(6,'S',NULL),(7,'S',NULL),(8,'S',NULL),(9,'S',NULL),(10,'S',NULL);
