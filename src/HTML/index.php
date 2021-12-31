@@ -11,7 +11,7 @@ if(isset($_SESSION["user_id"]) === true){
 <!doctype html>
 <html lang="en">
   <head>
-  <link rel="icon" href="../assets/poker_chip.png" >
+  <link rel="icon" type ="text/css" href="../assets/poker_chip.png" >
     <meta charset="utf-8">
     <title>Login</title>
 
@@ -50,3 +50,4 @@ if(isset($_SESSION["user_id"]) === true){
     
   </body>
 </html>
+?>
