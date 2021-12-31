@@ -4,11 +4,12 @@ session_start();
  
 // έλεγχος εάν ο χρήστης είναι ήδη συνδεδεμένος, αν ναι εμφάνιση της αρχικής σελίδας
 if(isset($_SESSION["user_id"]) === true){
-    header("Location: lobby.php");
+    header("Location: ./lobby.php");
     exit;
 }
+?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
   <link rel="icon" href="../assets/poker_chip.png" >
@@ -21,7 +22,7 @@ if(isset($_SESSION["user_id"]) === true){
   <body class="text-center">
     
 <main class="form-signin">
-  <form action="./auth/login.php" method="post">
+  <form action="../auth/login.php" method="post">
   
 	<img class="mb-4" src="../assets/poker_chip.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Εισάγετε στοιχεία </h1>

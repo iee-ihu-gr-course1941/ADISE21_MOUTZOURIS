@@ -1,14 +1,14 @@
 <?php
 session_start();
-include "./db/db_connection.php";
+include "../db/db_connection.php";
 
 if (empty(trim($_POST['username']))) {
-	header("Location: ./HTML/index.php?error=Παρακαλώ συμπληρώστε το username")
+	header("Location: ../HTML/index.php?error=Παρακαλώ συμπληρώστε το username")
 	exit();
 }
 
 else if (empty(trim($_POST['password'))) {
-	header("Location: ./HTML/index.php?error=Παρακαλώ συμπληρώστε το password")
+	header("Location: ../HTML/index.php?error=Παρακαλώ συμπληρώστε το password")
 	exit();
 }
 
@@ -26,11 +26,11 @@ else {
 	if (mysqli_num_rows($result) === 1) {
 		$_SESSION['username'] = $row['username'];
 		$_SESSION['user_id'] = $row['id'];
-		header("Location: ./HTML/lobby.php");
+		header("Location: ../HTML/lobby.php");
 		exit();
 	}
 	else {
-		header("Location: ./HTML/index.php?error=Λάθος username ή password");
+		header("Location: ../HTML/index.php?error=Λάθος username ή password");
 		exit();
 	}
 }
