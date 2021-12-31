@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 session_start();
 include "./db/db_connection.php";
 
@@ -21,8 +20,8 @@ else {
 		$result=mysqli_query($conn,$sql);
 	}
 	
-	$sql = "SELECT * FROM users WHERE username='$username' AND password='$pass'";
-	$result = mysqli_query($conn, $sql);
+	$sql="SELECT * FROM users WHERE username='$username' AND password='$pass'";
+	$result=mysqli_query($conn, $sql);
 	
 	if (mysqli_num_rows($result) === 1) {
 		$_SESSION['username'] = $row['username'];
