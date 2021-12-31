@@ -8,7 +8,7 @@ if(isset($_SESSION["user_id"]) === true){
     exit;
 }
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
   <link rel="icon" type ="text/css" href="../assets/poker_chip.png" >
