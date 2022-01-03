@@ -1,1 +1,5 @@
-test php file
+<?php
+
+echo "This php.."
+
+?>
