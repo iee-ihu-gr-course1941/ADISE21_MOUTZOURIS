@@ -27,6 +27,8 @@ else {
 	if (mysqli_num_rows($result) === 1) {
 		$_SESSION['username'] = $row['username'];
 		$_SESSION['user_id'] = $row['id'];
+		$sql = "INSERT INTO lobby VALUES ('$user_id','$username')";
+		mysqli_query($conn,$sql);
 		header("Location: ../HTML/lobby.php");
 		exit();
 	}
