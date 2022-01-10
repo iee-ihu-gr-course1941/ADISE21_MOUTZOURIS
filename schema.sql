@@ -4,15 +4,15 @@ DROP TABLE IF EXISTS game_status;
 DROP TABLE IF EXISTS game_cards;
 
 CREATE TABLE cards (
-  Number tinyint(2) NOT NULL,
+  Number varchar(2) NOT NULL,
   Symbol varchar(1) NOT NULL,
-  Player varchar(1) DEFAULT NULL
+  Player tinyint(2) DEFAULT NULL
 );
 
 CREATE TABLE game_cards (
-  Number tinyint(2) NOT NULL,
+  Number varchar(2) NOT NULL,
   Symbol varchar(1) NOT NULL,
-  Player varchar(1) DEFAULT NULL
+  Player tinyint(2) DEFAULT NULL
 );
   
 CREATE TABLE game_status (
@@ -63,7 +63,7 @@ END;;
 DELIMITER ;
 
 DELIMITER ;;
-CREATE PROCEDURE take_card(p varchar(1), s varchar(1), n tinyint)
+CREATE PROCEDURE take_card(p tinyint(2), s varchar(1), n tinyint(2))
 BEGIN
 
 UPDATE game_cards SET Player=p WHERE Symbol=s AND Number=n;
@@ -87,12 +87,9 @@ DELIMITER ;;
 CREATE PROCEDURE deadlock()
 BEGIN
 
-IF (SELECT count(*) FROM game_cards WHERE Player='F' )=0 THEN
-	UPDATE game_status SET status='ended', p_turn=NULL, result='F', last_change=CURRENT_TIMESTAMP;
-ELSIF (SELECT count(*) FROM game_cards WHERE Player='S' )=0 THEN
-	UPDATE game_status SET status='ended', p_turn=NULL, result='S', last_change=CURRENT_TIMESTAMP;
-END IF;
-
+IF (SELECT count(*) FROM game_cards)=1 THEN
+	SELECT Player FROM game_cards WHERE Player=@p
+	UPDATE game_status SET status='ended', p_turn=NULL, result=@p, last_change=CURRENT_TIMESTAMP;
 END;;
 
 DELIMITER ;
