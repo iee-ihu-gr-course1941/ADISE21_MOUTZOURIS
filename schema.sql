@@ -17,8 +17,8 @@ CREATE TABLE game_cards (
   
 CREATE TABLE game_status (
   status enum('not active','initialized','started','ended','aborded') NOT NULL DEFAULT 'not active',
-  p_turn enum('F','S') DEFAULT 'F',
-  result enum('F','S') DEFAULT NULL,
+  p_turn enum('1','2','3','4') DEFAULT '1',
+  result enum('1','2','3','4') DEFAULT NULL,
   last_change timestamp NULL DEFAULT NULL
 );
 
@@ -55,8 +55,10 @@ BEGIN
 
 CREATE TABLE game_cards LIKE cards;
 INSERT INTO game_cards SELECT * FROM cards ORDER BY RAND();
-UPDATE game_cards SET Player='F'
-UPDATE game_cards SET Player='S' LIMIT 21;
+UPDATE game_cards SET Player='1'
+UPDATE game_cards SET Player='2' 
+UPDATE game_cards SET Player='3'
+UPDATE game_cards SET Player='4' LIMIT 21;
 
 END;;
 
