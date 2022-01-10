@@ -48,46 +48,8 @@ UPDATE game_status set status='not active', p_turn=null, result=null;
 DROP TABLE IF EXISTS game_cards;
 END;;
 
-DELIMETER;
+DELIMETER ;
 
-<<<<<<< Updated upstream
-DELIMITER ;;
-CREATE PROCEDURE deal_cards()
-BEGIN
-
-CREATE TABLE game_cards LIKE cards;
-INSERT INTO game_cards SELECT * FROM cards ORDER BY RAND();
-UPDATE game_cards SET Player='1'
-UPDATE game_cards SET Player='2' 
-UPDATE game_cards SET Player='3'
-UPDATE game_cards SET Player='4' LIMIT 21;
-
-END;;
-
-DELIMITER ;
-
-DELIMITER ;;
-CREATE PROCEDURE take_card(p tinyint(2), s varchar(1), n tinyint(2))
-BEGIN
-
-UPDATE game_cards SET Player=p WHERE Symbol=s AND Number=n;
-UPDATE game_status SET p_turn=if(p='F','S','F'), last_change=CURRENT_TIMESTAMP;
-
-END;;
-
-DELIMITER ;
-
-DELIMITER ;;
-CREATE PROCEDURE remove_pairs()
-BEGIN
-
-
-
-END;;
-
-DELIMITER ;
-=======
->>>>>>> Stashed changes
 
 DELIMITER ;;
 CREATE PROCEDURE deadlock()
