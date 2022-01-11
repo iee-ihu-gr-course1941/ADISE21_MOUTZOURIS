@@ -31,13 +31,13 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
         <div class="table">
             <table id="lobby">
                 <tr>
-                    <th>ID</th>
+                    <th>ID Παίκτη</th>
                     <th>Username</th>
                 </tr>
             </table>
         </div>
         <p id='info'>2-4 παίκτες για την έναρξη του παιχνιδιού</p>
-        <button id="start" class='disabled' onclick="startGame()" disabled> Έναρξη </button>
+        <button id="start" class='disabled' onclick="window.location.pathname = `${url}/HTML/board.php`;" disabled> Έναρξη </button>
                   
     </body>
     <script src="../scripts/lobby.js"></script>

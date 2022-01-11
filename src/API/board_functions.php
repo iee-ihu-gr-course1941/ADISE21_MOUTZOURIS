@@ -45,9 +45,14 @@ function discardDuplicate($player) {
 }
 
 
-function endTurn($player) {
+function endTurn($player,$number_of_players) {
 
 	global $conn;
+	
+	$sql = "SELECT pid,position FROM lobby";
+	$result = mysqli_query($conn,$sql);
+	$check = $result->fetch_assoc();
+	while($check<=
 	$sql = "UPDATE game_status SET p_turn='$_SESSION['user_id']'";
 	mysqli_query($conn,$sql);	
 }

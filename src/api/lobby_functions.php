@@ -21,12 +21,14 @@ function checkNumberOfPlayers(){
 function getLobby(){
 		global $par;
 		
+		$lobby = array();
 		$sql = "SELECT pid, pname FROM lobby"
 		$result = mysqli_query($par, $sql);
-		$lobby = $result->fetch_all(); 
-			return $lobby;
-		
-	
+		while($row = $result->fetch_assoc()) {
+			$element = array("{$row['user_id']}" => "{$row['username']}");
+			array_push($lobby,$element);
+		}
+		return $lobby;	
 }
 
 function StartGame(){
