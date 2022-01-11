@@ -18,14 +18,18 @@ function dealCards($number_of_players) {
 }
 
 
-function getGameCards($player) {
+function getGameCards() {
 
 	global $conn;
-	$sql = "SELECT number,symbol FROM game_cards WHERE player='$_SESSION['user_id']'";
-	$result = mysqli_query($conn,$sql);
-	
-	$cards = $result->fetch_all();
-	return $cards;
+		
+		$hand = array();
+		$sql = "SELECT number,symbol FROM game_cards WHERE player='$_SESSION['user_id']'"
+		$result = mysqli_query($conn, $sql);
+		while($row = $result->fetch_assoc()) {
+			$card = array("{$row['symbol']}" => "{$row['number']}");
+			array_push($hand,$card);
+		}
+		return $hand;	
 }
 
 

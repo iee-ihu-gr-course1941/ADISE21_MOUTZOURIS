@@ -36,7 +36,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
                 </tr>
             </table>
         </div>
-        <p id='info'>2-4 παίκτες για την έναρξη του παιχνιδιού</p>
+        <p id='info'>testtest</p>
         <button id="start" class='disabled' onclick="window.location.pathname = `${url}/HTML/board.php`;" disabled> Έναρξη </button>
                   
     </body>

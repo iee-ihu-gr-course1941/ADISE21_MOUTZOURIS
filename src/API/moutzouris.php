@@ -26,6 +26,7 @@ switch ($r = array_shift($request)) {
 		switch ($b = array_shift($request)) {
 			case 'getGameCards':
 				if (getGameCards($request[0])) {
+					$currentHand = getGameCards();
 					echo json_encode(array('status' => '200'));
                 } else {
                     echo json_encode(array('status' => '404'));
@@ -44,3 +45,4 @@ switch ($r = array_shift($request)) {
             'status' => $status
         ));
         break;
+		

@@ -29,7 +29,7 @@ setInterval(async () => {
         <th>ID Πάικτη</th>
         <th>Username</th>
     </tr>`;
-	const data = await fetch(`${url}/api/controller.php/lobby`).then((res) => res.json());
+	const data = await fetch(`${url}/api/moutzouris.php/lobby`).then((res) => res.json());
 	data.players.forEach((element)) => {
 		for (const [id, username] of Object.entries(element)) {
 			addPlayerToTable(id, username);

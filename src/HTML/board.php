@@ -32,19 +32,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
         <div class="table">
             <table id="cards">
 				<tr>
-					<td>S10</td>
-					<td>S10</td>
-					<td>S10</td>
-					<td>S10</td>
-					<td>S10</td>
-					<td>S10</td>
-					<td>S10</td>
-					<td>S10</td>
-					<td>S10</td>
-					<td>S10</td>
+					<th>Symbol</th>
+                    <th>Number</th>
 				</tr>
             </table>
         </div>
+		<p id='info'></p>
         <button id="take-card" onclick="startGame()" disabled> Πάρε Κάρτα </button>
 		<p id='info'></p>
                   
