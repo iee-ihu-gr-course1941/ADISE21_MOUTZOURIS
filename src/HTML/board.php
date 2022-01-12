@@ -37,7 +37,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 				</tr>
             </table>
         </div>
-		<p id='info'></p>
+		<p id='inform'>testetstte123</p>
         <button id="take-card" onclick="startGame()" disabled> Πάρε Κάρτα </button>
 		<p id='info'></p>
                   
