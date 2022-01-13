@@ -16,9 +16,12 @@ else if (empty(trim($_POST['password']))) {
 else {
 	$username = $_POST['username'];
 	$pass = $_POST['password'];
+	echo "1o else";
 	$sql="SELECT * FROM users WHERE username='$username'";
 	$result=mysqli_query($conn,$sql);
-	if(mysqli_num_rows($result) == 0){			
+	if(mysqli_num_rows($result) == 0){
+	echo "1o if"; 
+		
 		$sql = "INSERT INTO users VALUES (default,'$username','$pass')";
 		$result=mysqli_query($conn,$sql);
 	}
@@ -27,6 +30,7 @@ else {
 	$result=mysqli_query($conn, $sql);
 	
 	if (mysqli_num_rows($result) === 1) {
+		echo "2o if"; 
 		$_SESSION['username'] = $row['username'];
 		$_SESSION['user_id'] = $row['id'];
 		$uname = $_SESSION['username'];
