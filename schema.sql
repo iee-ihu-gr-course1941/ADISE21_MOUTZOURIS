@@ -48,23 +48,23 @@ INSERT INTO users VALUES (default,'Alex','2310'),(default,'Miltos','lolo');
 
 
 
-DELIMITER ;;
+DELIMITER //
 CREATE PROCEDURE clear_board ()
 BEGIN
-UPDATE game_status set status='not active', p_turn=null, result=null;;
-DROP TABLE IF EXISTS game_cards;;
-END;;
+UPDATE game_status set status='not active', p_turn=null, result=null;
+DROP TABLE IF EXISTS game_cards;
+END //
 
 DELIMITER ;
 
 
-DELIMITER ;;
+DELIMITER //
 CREATE PROCEDURE deadlock ()
 BEGIN
 
 IF (SELECT count(*) FROM game_cards)=1 THEN
-	SELECT Player FROM game_cards WHERE Player=@p
-	UPDATE game_status SET status='ended', p_turn=NULL, result=@p, last_change=CURRENT_TIMESTAMP;;
-END;;
+	SELECT Player FROM game_cards WHERE Player=@p;
+	UPDATE game_status SET status='ended', p_turn=NULL, result=@p, last_change=CURRENT_TIMESTAMP;
+END //
 
 DELIMITER ;
