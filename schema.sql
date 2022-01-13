@@ -48,14 +48,14 @@ INSERT INTO users VALUES (default,'Alex','2310'),(default,'Miltos','lolo');
 
 
 
-DELIMETER ;;
+DELIMITER ;;
 CREATE PROCEDURE clear_board()
 BEGIN
 UPDATE game_status set status='not active', p_turn=null, result=null;;
 DROP TABLE IF EXISTS game_cards;;
 END;;
 
-DELIMETER ;
+DELIMITER ;
 
 
 DELIMITER ;;
