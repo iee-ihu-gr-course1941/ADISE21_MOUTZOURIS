@@ -35,7 +35,7 @@ if(isset($_SESSION['user_id']) === true){
     </div>
 
     <button type="submit">Σύνδεση</button>
-	<p class="info"><?php echo $error; ?></p>
+	<p class="info"><?php echo $_POST['$error']; ?></p>
     <p>&copy; 2021-2022</p>
   </form>
 </main>
