@@ -49,7 +49,7 @@ INSERT INTO users VALUES (default,'Alex','2310'),(default,'Miltos','lolo');
 
 
 DELIMITER ;;
-CREATE PROCEDURE clear_board()
+CREATE PROCEDURE clear_board ()
 BEGIN
 UPDATE game_status set status='not active', p_turn=null, result=null;;
 DROP TABLE IF EXISTS game_cards;;
@@ -59,7 +59,7 @@ DELIMITER ;
 
 
 DELIMITER ;;
-CREATE PROCEDURE deadlock()
+CREATE PROCEDURE deadlock ()
 BEGIN
 
 IF (SELECT count(*) FROM game_cards)=1 THEN
