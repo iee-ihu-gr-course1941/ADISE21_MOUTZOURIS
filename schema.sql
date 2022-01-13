@@ -61,10 +61,10 @@ DELIMITER ;
 DELIMITER //
 CREATE PROCEDURE deadlock ()
 BEGIN
-
 IF (SELECT count(*) FROM game_cards)=1 THEN
 	SELECT Player FROM game_cards WHERE Player=@p;
 	UPDATE game_status SET status='ended', p_turn=NULL, result=@p, last_change=CURRENT_TIMESTAMP;
+END IF;
 END //
 
 DELIMITER ;
