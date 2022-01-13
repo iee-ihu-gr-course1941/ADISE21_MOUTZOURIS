@@ -1,5 +1,6 @@
 DROP DATABASE IF EXISTS moutzouris;
 CREATE DATABASE moutzouris;
+USE moutzouris;
 DROP TABLE IF EXISTS lobby;
 DROP TABLE IF EXISTS cards;
 DROP TABLE IF EXISTS users;
