@@ -1,7 +1,12 @@
+DROP DATABASE IF EXISTS moutzouris;
+CREATE DATABASE moutzouris;
+DROP TABLE IF EXISTS lobby;
 DROP TABLE IF EXISTS cards;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS game_status;
 DROP TABLE IF EXISTS game_cards;
+
+
 
 CREATE TABLE cards (
   Number varchar(2) NOT NULL,
