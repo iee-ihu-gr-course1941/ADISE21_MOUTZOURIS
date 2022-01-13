@@ -4,14 +4,12 @@ include "../db/db_connection.php";
 
 
 if (empty(trim($_POST['username']))) {
-	$error="Παρακαλώ συμπληρώστε το username";
-	header("Location: ../HTML/index.php");
+	header("Location: ../HTML/index.php?error=Παρακαλώ συμπληρώστε το username");
 	exit();
 }
 
 else if (empty(trim($_POST['password']))) {
-	$error="Παρακαλώ συμπληρώστε το password";
-	header("Location: ../HTML/index.php");
+	header("Location: ../HTML/index.php?error=Παρακαλώ συμπληρώστε το password");
 	exit();
 }
 
