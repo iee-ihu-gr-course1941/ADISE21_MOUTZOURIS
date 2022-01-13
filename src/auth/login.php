@@ -41,7 +41,7 @@ else {
 		}
 	}
 	else {
-		header("Location: ../HTML/index.php?error=Λάθος username ή password";
+		header("Location: ../HTML/index.php?error=Λάθος username ή password");
 		exit();
 	}
 }
