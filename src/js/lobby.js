@@ -30,7 +30,7 @@ setInterval(async () => {
         <th>Username</th>
     </tr>`;
 	const data = await fetch('https://users.iee.ihu.gr/~it174916/ADISE21_MOUTZOURIS/src/api/moutzouris.php/lobby').then((res) => { return res.json()});
-	data.players.forEach((element)) => {
+	data.players.forEach((element) => {
 		for (const [id, username] of Object.entries(element)) {
 			addPlayerToTable(id, username);
 		}
