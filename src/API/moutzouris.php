@@ -2,11 +2,9 @@
 
 session_start();
 
-include('../db/db_conn.php');
+include('../db/db_connection.php');
 include('./board_functions.php');
-include('./game_functions.php');
 include('./lobby_functions.php');
-include('./game_loop_functions.php');
 
 $method = $_SERVER['REQUEST_METHOD'];
 $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
