@@ -23,7 +23,7 @@ function getLobby(){
 		$sql = "SELECT pid, pname FROM lobby";
 		$result = mysqli_query($conn, $sql);
 		while($row = $result->fetch_assoc()) {
-			$element = array("{$row['user_id']}" => "{$row['username']}");
+			$element = array("{$row['pid']}" => "{$row['pname']}");
 			array_push($lobby,$element);
 		}
 		return $lobby;
