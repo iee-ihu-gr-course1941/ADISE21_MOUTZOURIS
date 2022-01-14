@@ -7,6 +7,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
         header('Location: ./board.php');
         exit();
     }
+}	
 ?>
 
 
