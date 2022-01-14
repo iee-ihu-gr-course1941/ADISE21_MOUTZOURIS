@@ -23,12 +23,11 @@ switch ($r = array_shift($request)) {
     case 'board':
 		switch ($b = array_shift($request)) {
 			case 'getGameCards':
-				if (getGameCards($request[0])) {
 					$currentHand = getGameCards();
 					echo json_encode(array('status' => '200'));
-                } else {
-                    echo json_encode(array('status' => '404'));
-                }
+                
+                    //echo json_encode(array('status' => '404'));
+                
                 break;
 			default:
                 header("HTTP/1.1 404 Not Found");
@@ -47,3 +46,5 @@ switch ($r = array_shift($request)) {
 		header("HTTP/1.1 404 Not Found");
 		break;
 }
+
+?>

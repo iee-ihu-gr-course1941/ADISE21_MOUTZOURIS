@@ -37,7 +37,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
                 </tr>
             </table>
         </div>
-        <p id='info'>testtest</p>
+        <p id='info'></p>
         <button id="start" class='disabled' onclick="window.location.pathname = `${url}/HTML/board.php`;" disabled> Έναρξη </button>
                   
     </body>
