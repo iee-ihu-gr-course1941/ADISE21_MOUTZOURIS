@@ -2,10 +2,10 @@
 include('../db/db_connection.php')
 
 function checkNumberOfPlayers(){
-	global $par;
+	global $conn;
 	
 	$sql="SELECT COUNT(pid) as Players FROM lobby"
-	$result = mysqli_query($par, $sql);
+	$result = mysqli_query($conn, $sql);
 	$row = $result->fetch_all(); 
 		if ($row>=2 $$ $row=<4){
 			return 'TRUE';
@@ -19,11 +19,11 @@ function checkNumberOfPlayers(){
 }
 
 function getLobby(){
-		global $par;
+		global $conn;
 		
 		$lobby = array();
 		$sql = "SELECT pid, pname FROM lobby"
-		$result = mysqli_query($par, $sql);
+		$result = mysqli_query($conn, $sql);
 		while($row = $result->fetch_assoc()) {
 			$element = array("{$row['user_id']}" => "{$row['username']}");
 			array_push($lobby,$element);
@@ -32,9 +32,9 @@ function getLobby(){
 }
 
 function StartGame(){
-	global $par;
+	global $conn;
 	$sql= "UPDATE game_status SET status = 'started',last_change = CURRENT TIMESTAMP, p_turn="$_SESSION['user_id']"";
-	mysqli_query($par, $sql);
+	mysqli_query($conn, $sql);
 	
 }
 ?>
